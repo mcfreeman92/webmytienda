@@ -226,6 +226,11 @@
   .role-card ul { margin: 0; padding-left: 1.1rem; color: var(--ink-soft); font-size: 0.94rem; }
   .role-card li { margin-bottom: 0.4rem; }
 
+  /* ---------- plan cards (licencias) ---------- */
+  .plan-card.pequeno .mono { background: var(--teal); }
+  .plan-card.mediano .mono { background: var(--gold); }
+  .plan-card.grande .mono { background: var(--wine); }
+
   /* ---------- benefits ---------- */
   .benefits {
     display: grid;
@@ -391,10 +396,11 @@
     <div class="navlinks">
       <a href="#descarga">Descargar</a>
       <a href="#roles">Quién hace qué</a>
-      <a href="#beneficios">Qué ganás</a>
+      <a href="#beneficios">Qué ganas</a>
       <a href="#dia">Un día típico</a>
       <a href="#offline">Sin internet</a>
       <a href="#empezar">Cómo empezar</a>
+      <a href="#licencias">Licencias</a>
       <a href="#faq">Preguntas</a>
     </div>
   </div>
@@ -404,7 +410,7 @@
 
   <section class="hero" style="border-bottom:none;">
     <span class="eyebrow">Guía para dueños de negocio</span>
-    <h1>Sabé en todo momento cuánto tenés, cuánto vendiste y cuánto te deben.</h1>
+    <h1>Sabe en todo momento cuánto tienes, cuánto vendiste y cuánto te deben.</h1>
     <p class="lede">Esta guía explica, sin tecnicismos, qué hace la app y cómo usarla para llevar el control real de tu negocio: stock, ventas, fiados y quién hizo cada cosa — funcione o no el internet.</p>
     <div class="hero-tags">
       <span class="tag">Sin necesitar Excel</span>
@@ -416,11 +422,11 @@
 
   <section id="descarga">
     <span class="eyebrow">Para empezar</span>
-    <h2>Descargá la app</h2>
-    <p class="intro">Instalador oficial para Android. Se baja directo al celular, sin pasar por ninguna tienda de aplicaciones.</p>
+    <h2>Descarga la app</h2>
+    <p class="intro">Instalador oficial para Android. Se descarga directo al celular, sin pasar por ninguna tienda de aplicaciones.</p>
     <div class="callout download-callout">
       <h3>Última versión disponible</h3>
-      <p>Tocá el botón desde el celular donde vas a usar la app. Si es la primera vez que instalás algo así, puede pedirte un permiso ("permitir instalar aplicaciones de este origen") — es normal, se acepta una sola vez y no hace falta repetirlo en las próximas actualizaciones.</p>
+      <p>Toca el botón desde el celular donde vas a usar la app. Si es la primera vez que instalas algo así, puede pedirte un permiso ("permitir instalar aplicaciones de este origen") — es normal, se acepta una sola vez y no hace falta repetirlo en las próximas actualizaciones.</p>
       <p style="margin-top:1.3rem;">
         <a class="btn-download" href="https://github.com/mcfreeman92/tienda-app-releases/releases/latest/download/app-release.apk">
           ⬇ Descargar la última versión
@@ -430,10 +436,10 @@
   </section>
 
   <section id="que-es">
-    <span class="eyebrow">En criollo</span>
-    <h2>¿Qué es esta app, en criollo?</h2>
-    <p class="intro">Es un sistema de gestión para tu negocio que reemplaza al cuaderno, la calculadora y los mensajes de "¿cuánto quedó?" por algo que cualquiera de tus empleados puede usar desde su celular. Cada persona entra con su usuario y ve solamente lo que le corresponde a su tarea — nadie ve más de la cuenta, y vos como dueño ves todo.</p>
-    <p class="intro" style="margin-top:-1.3rem;">No hace falta ser bueno con la computación ni con los números: la app hace las cuentas, guarda todo por vos y te avisa cuando algo necesita tu atención.</p>
+    <span class="eyebrow">En pocas palabras</span>
+    <h2>¿Qué es esta app, en pocas palabras?</h2>
+    <p class="intro">Es un sistema de gestión para tu negocio que reemplaza al cuaderno, la calculadora y los mensajes de "¿cuánto quedó?" por algo que cualquiera de tus empleados puede usar desde su celular. Cada persona entra con su usuario y ve solamente lo que le corresponde a su tarea — nadie ve más de la cuenta, y tú como dueño ves todo.</p>
+    <p class="intro" style="margin-top:-1.3rem;">No hace falta ser bueno con la computación ni con los números: la app hace las cuentas, guarda todo por ti y te avisa cuando algo necesita tu atención.</p>
   </section>
 
   <section id="roles">
@@ -448,7 +454,7 @@
         <ul>
           <li>Vende escaneando el código de barras del producto</li>
           <li>Cobra en efectivo, transferencia (con foto del comprobante), o fiado en cuotas</li>
-          <li>La app calcula el vuelto sola, incluso si el cliente paga con una moneda distinta</li>
+          <li>La app calcula el cambio sola, incluso si el cliente paga con una moneda distinta</li>
           <li>Ve el total vendido del día y sus productos más vendidos</li>
         </ul>
       </div>
@@ -465,7 +471,7 @@
       </div>
       <div class="role-card admin">
         <div class="mono">AD</div>
-        <h3>Administrador (vos)</h3>
+        <h3>Administrador (tú)</h3>
         <div class="role-sub">El dueño o encargado general</div>
         <ul>
           <li>Ve las ventas y el movimiento de almacén de todo el negocio, en vivo</li>
@@ -486,7 +492,7 @@
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="8" width="18" height="12" rx="1.5"/><path d="M3 8l3-4h12l3 4"/><path d="M9 12h6"/></svg></div>
         <div>
           <h4>Stock real, sin contar a mano</h4>
-          <p>Sabés cuánto tenés en el almacén y cuánto en el mostrador en todo momento, sin hacer inventario a ojo.</p>
+          <p>Sabes cuánto tienes en el almacén y cuánto en el mostrador en todo momento, sin hacer inventario a ojo.</p>
         </div>
       </div>
       <div class="benefit">
@@ -507,7 +513,7 @@
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="12" r="6.5"/><circle cx="15.5" cy="12" r="6.5"/></svg></div>
         <div>
           <h4>Varias monedas a la vez</h4>
-          <p>Trabajá en pesos y dólares (u otras) con conversión automática al momento de cobrar.</p>
+          <p>Trabaja en pesos y dólares (u otras) con conversión automática al momento de cobrar.</p>
         </div>
       </div>
       <div class="benefit">
@@ -521,7 +527,7 @@
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M18 8a6 6 0 10-12 0c0 7-3 8-3 8h18s-3-1-3-8"/><path d="M13.7 21a2 2 0 01-3.4 0"/></svg></div>
         <div>
           <h4>Te avisa antes de que sea un problema</h4>
-          <p>Notificaciones de ventas, movimientos de almacén, stock bajo y pedidos de acceso de nuevos empleados. Cuando sale una versión nueva de la app, también te avisa a vos y a tu equipo con un aviso arriba de la pantalla — tocarlo empieza la descarga al instante.</p>
+          <p>Notificaciones de ventas, movimientos de almacén, stock bajo y pedidos de acceso de nuevos empleados. Cuando sale una versión nueva de la app, también te avisa a ti y a tu equipo con un aviso arriba de la pantalla — tocarlo empieza la descarga al instante.</p>
         </div>
       </div>
     </div>
@@ -557,7 +563,7 @@
     <div class="callout">
       <h3>La app sigue funcionando igual.</h3>
       <p>Cada venta y cada movimiento de mercadería se guarda al instante en el celular donde se hizo, tenga o no tenga señal en ese momento. No hace falta estar conectado para seguir atendiendo clientes o cargando mercadería.</p>
-      <p>Apenas el celular vuelve a tener internet — aunque sea un momento — toda esa información se manda sola y se actualiza en los dispositivos de los demás. Si tenés varios encargados o más de un local, cada uno puede seguir trabajando de forma independiente sin perder nada, y todo se termina ordenando solo cuando vuelve la conexión.</p>
+      <p>Apenas el celular vuelve a tener internet — aunque sea un momento — toda esa información se envía sola y se actualiza en los dispositivos de los demás. Si tienes varios encargados o más de un local, cada uno puede seguir trabajando de forma independiente sin perder nada, y todo se termina ordenando solo cuando vuelve la conexión.</p>
     </div>
   </section>
 
@@ -568,7 +574,7 @@
       <li>
         <div>
           <h4>Alguien se registra como Administrador</h4>
-          <p>Esa persona crea la empresa desde la pantalla de Registro, eligiendo el rol "Crear empresa". Suele ser el dueño o quien va a supervisar todo. Si más adelante sumás otro local o un negocio distinto, se repite este mismo paso: cada empresa queda separada, con su propio stock, su propia caja y su propio equipo, sin que se mezcle una cosa con la otra.</p>
+          <p>Esa persona crea la empresa desde la pantalla de Registro, eligiendo el rol "Crear empresa". Suele ser el dueño o quien va a supervisar todo. Si más adelante sumas otro local o un negocio distinto, se repite este mismo paso: cada empresa queda separada, con su propio stock, su propia caja y su propio equipo, sin que se mezcle una cosa con la otra.</p>
         </div>
       </li>
       <li>
@@ -580,7 +586,7 @@
       <li>
         <div>
           <h4>El administrador aprueba</h4>
-          <p>Ningún empleado nuevo puede trabajar hasta que el admin lo aprueba desde Ajustes → Usuarios. Así controlás quién entra.</p>
+          <p>Ningún empleado nuevo puede trabajar hasta que el admin lo aprueba desde Ajustes → Usuarios. Así controlas quién entra.</p>
         </div>
       </li>
       <li>
@@ -604,37 +610,80 @@
     </ol>
   </section>
 
+  <section id="licencias">
+    <span class="eyebrow">Planes y licencias</span>
+    <h2>Elige el plan según el tamaño de tu equipo</h2>
+    <p class="intro">Las tres licencias incluyen exactamente las mismas funciones de la app. Lo único que cambia es cuántas cuentas activas puede tener cada rol.</p>
+    <div class="callout download-callout" style="margin-bottom:1.6rem;">
+      <h3>2 meses sin costo para probar</h3>
+      <p>Toda empresa nueva empieza con el plan Pequeño sin costo durante 2 meses, sin compromiso, para que pruebes la app con tu equipo antes de decidir qué licencia necesitas.</p>
+    </div>
+    <div class="roles">
+      <div class="role-card plan-card pequeno">
+        <div class="mono">P</div>
+        <h3>Pequeño</h3>
+        <div class="role-sub">Para un local con equipo chico</div>
+        <ul>
+          <li>1 Administrador</li>
+          <li>1 Almacenero</li>
+          <li>1 Vendedor</li>
+          <li>Incluye los 2 meses de prueba sin costo</li>
+        </ul>
+      </div>
+      <div class="role-card plan-card mediano">
+        <div class="mono">M</div>
+        <h3>Mediano</h3>
+        <div class="role-sub">Para equipos en crecimiento</div>
+        <ul>
+          <li>3 Administradores</li>
+          <li>5 Almaceneros</li>
+          <li>5 Vendedores</li>
+        </ul>
+      </div>
+      <div class="role-card plan-card grande">
+        <div class="mono">G</div>
+        <h3>Grande</h3>
+        <div class="role-sub">Para cadenas y varios locales</div>
+        <ul>
+          <li>Administradores ilimitados</li>
+          <li>Almaceneros ilimitados</li>
+          <li>Vendedores ilimitados</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <section id="faq">
     <span class="eyebrow">Dudas frecuentes</span>
     <h2>Preguntas que seguro te estás haciendo</h2>
     <div class="faq">
       <details>
         <summary>¿Qué es un "vale" exactamente?</summary>
-        <p>Es el comprobante de un movimiento de mercadería. Puede ser una <strong>entrada</strong> (algo que compraste y sumás al almacén) o una <strong>salida</strong> (algo que sacás del almacén, ya sea porque se rompió, lo usaste vos, o lo pasaste al mostrador para vender). Cada vale queda numerado y con la fecha y la persona que lo hizo.</p>
+        <p>Es el comprobante de un movimiento de mercadería. Puede ser una <strong>entrada</strong> (algo que compraste y sumas al almacén) o una <strong>salida</strong> (algo que sacas del almacén, ya sea porque se rompió, lo usaste tú, o lo pasaste al mostrador para vender). Cada vale queda numerado y con la fecha y la persona que lo hizo.</p>
       </details>
       <details>
         <summary>¿Puedo vender fiado?</summary>
-        <p>Sí. En el punto de venta podés elegir "a plazo" y definir en cuántas cuotas y de qué monto se paga. La app te muestra después qué cuotas están vencidas y cuáles ya se cobraron, para que no se te escape ningún cliente.</p>
+        <p>Sí. En el punto de venta puedes elegir "a plazo" y definir en cuántas cuotas y de qué monto se paga. La app te muestra después qué cuotas están vencidas y cuáles ya se cobraron, para que no se te escape ningún cliente.</p>
       </details>
       <details>
         <summary>¿Cómo me doy cuenta si un empleado hizo algo que no debía?</summary>
-        <p>Todo alta, edición o eliminación queda registrada en la auditoría con el nombre de la persona y el momento exacto. Podés revisarlo cuando quieras desde el panel de administrador.</p>
+        <p>Todo alta, edición o eliminación queda registrada en la auditoría con el nombre de la persona y el momento exacto. Puedes revisarlo cuando quieras desde el panel de administrador.</p>
       </details>
       <details>
         <summary>¿Puedo tener más de un local o varios celulares trabajando al mismo tiempo?</summary>
-        <p>Sí. Cada dispositivo trabaja de forma independiente, incluso sin internet, y se sincroniza con los demás apenas hay conexión. Como administrador, podés vincular un dispositivo nuevo compartiendo un código QR o un archivo de acceso.</p>
+        <p>Sí. Cada dispositivo trabaja de forma independiente, incluso sin internet, y se sincroniza con los demás apenas hay conexión. Como administrador, puedes vincular un dispositivo nuevo compartiendo un código QR o un archivo de acceso.</p>
       </details>
       <details>
         <summary>Tengo (o estoy por abrir) más de un negocio. ¿Puedo usar la misma app para los dos, sin que se mezclen?</summary>
-        <p>Sí, y es más simple de lo que parece: cada negocio es su propia "empresa" dentro de la app, con su propio equipo, su propio stock y su propia caja, completamente aislados uno del otro. Para el segundo negocio simplemente se repite el registro inicial creando una empresa nueva. Sirve tanto si abrís una sucursal, como si el negocio nuevo es de otro rubro — cada uno lleva sus cuentas por separado, pero seguís usando la misma app de siempre.</p>
+        <p>Sí, y es más simple de lo que parece: cada negocio es su propia "empresa" dentro de la app, con su propio equipo, su propio stock y su propia caja, completamente aislados uno del otro. Para el segundo negocio simplemente se repite el registro inicial creando una empresa nueva. Sirve tanto si abres una sucursal, como si el negocio nuevo es de otro rubro — cada uno lleva sus cuentas por separado, pero sigues usando la misma app de siempre.</p>
       </details>
       <details>
         <summary>¿Necesito saber de contabilidad o de sistemas para usarla?</summary>
-        <p>No. Las cuentas (vueltos, conversión de moneda, reparto de cuotas, costos promedio) las hace la app. Vos solo cargás lo que compraste, lo que vendiste y a quién le fiaste.</p>
+        <p>No. Las cuentas (cambio, conversión de moneda, reparto de cuotas, costos promedio) las hace la app. Tú solo cargas lo que compraste, lo que vendiste y a quién le fiaste.</p>
       </details>
       <details>
         <summary>¿Qué pasa si se me está por acabar un producto?</summary>
-        <p>Podés definir desde qué cantidad se considera "stock bajo" y la app te manda una notificación apenas un producto llega a ese límite, para que lo repongas a tiempo.</p>
+        <p>Puedes definir desde qué cantidad se considera "stock bajo" y la app te manda una notificación apenas un producto llega a ese límite, para que lo repongas a tiempo.</p>
       </details>
     </div>
   </section>
