@@ -1,4 +1,3 @@
-# Despliega index.html a GitHub Pages en cada push a main.
 name: Deploy static content to Pages
 
 on:
