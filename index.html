@@ -227,9 +227,33 @@
   .role-card li { margin-bottom: 0.4rem; }
 
   /* ---------- plan cards (licencias) ---------- */
+  .plan-card { position: relative; }
   .plan-card.pequeno .mono { background: var(--teal); }
   .plan-card.mediano .mono { background: var(--gold); }
   .plan-card.grande .mono { background: var(--wine); }
+  .plan-card.featured {
+    border-color: var(--gold);
+    box-shadow: 0 2px 4px rgba(32,38,31,0.08), 0 14px 32px rgba(185,121,28,0.22);
+  }
+  @media (min-width: 720px) {
+    .plan-card.featured { transform: translateY(-0.4rem); }
+  }
+  .plan-badge {
+    position: absolute;
+    top: -0.75rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gold);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.9rem;
+    border-radius: 999px;
+    box-shadow: var(--shadow);
+    white-space: nowrap;
+  }
   .plan-price {
     margin: 0.9rem 0 1.1rem;
     padding-bottom: 0.9rem;
@@ -734,7 +758,8 @@
           <li>Soporte 24/7</li>
         </ul>
       </div>
-      <div class="role-card plan-card mediano">
+      <div class="role-card plan-card mediano featured">
+        <span class="plan-badge">Más popular</span>
         <div class="mono">T</div>
         <h3>Tienda</h3>
         <div class="role-sub">Para equipos en crecimiento</div>
