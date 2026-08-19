@@ -409,6 +409,81 @@
   .btn-download:hover { background: var(--teal-ink); }
   .download-callout { border-left-color: var(--gold); }
   .download-callout p + p { margin-top: 0.6rem; }
+
+  /* ---------- contacto ---------- */
+  .contact-box {
+    max-width: 620px;
+  }
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+  }
+  .contact-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .contact-field label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--ink-soft);
+  }
+  .contact-field input,
+  .contact-field textarea {
+    font: inherit;
+    font-size: 0.95rem;
+    padding: 0.7rem 0.9rem;
+    border-radius: 8px;
+    border: 1px solid var(--line);
+    background: var(--paper);
+    color: var(--ink);
+    resize: vertical;
+  }
+  .contact-field input:focus,
+  .contact-field textarea:focus {
+    outline: 2px solid var(--teal);
+    outline-offset: 1px;
+  }
+  .contact-actions {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    margin-top: 0.2rem;
+  }
+  .btn-contact {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+  }
+  .btn-contact.email {
+    background: var(--teal);
+    color: #fff;
+    box-shadow: var(--shadow);
+  }
+  .btn-contact.email:hover { background: var(--teal-ink); }
+  .btn-contact.whatsapp {
+    background: transparent;
+    border: 1.5px solid var(--line);
+    color: var(--ink);
+  }
+  .btn-contact.whatsapp:hover {
+    border-color: var(--teal);
+    color: var(--teal-ink);
+  }
+  .contact-hint {
+    font-size: 0.8rem;
+    color: var(--ink-faint);
+    margin-top: 0.7rem;
+  }
 </style>
 </head>
 <body>
@@ -425,6 +500,7 @@
       <a href="#empezar">Cómo empezar</a>
       <a href="#licencias">Licencias</a>
       <a href="#faq">Preguntas</a>
+      <a href="#contacto">Contacto</a>
     </div>
   </div>
 </nav>
@@ -728,11 +804,60 @@
     </div>
   </section>
 
+  <section id="contacto">
+    <span class="eyebrow">Hablemos</span>
+    <h2>¿Tienes dudas? Escríbenos</h2>
+    <p class="intro">Completa el asunto y el motivo de tu consulta, y elige si prefieres enviarlo por email o por WhatsApp.</p>
+    <div class="callout contact-box">
+      <form class="contact-form" id="contact-form">
+        <div class="contact-field">
+          <label for="contact-asunto">Asunto</label>
+          <input type="text" id="contact-asunto" name="asunto" required placeholder="Ej: Quiero cotizar el plan Tienda">
+        </div>
+        <div class="contact-field">
+          <label for="contact-motivo">Motivo</label>
+          <textarea id="contact-motivo" name="motivo" rows="4" required placeholder="Cuéntanos qué necesitas..."></textarea>
+        </div>
+        <div class="contact-actions">
+          <button type="button" class="btn-contact email" onclick="enviarPorEmail()">Enviar por email</button>
+          <button type="button" class="btn-contact whatsapp" onclick="enviarPorWhatsApp()">Enviar por WhatsApp</button>
+        </div>
+      </form>
+      <p class="contact-hint">Al tocar un botón se abre tu app de correo o de WhatsApp con el mensaje ya escrito, listo para enviar.</p>
+    </div>
+  </section>
+
 </div>
 
 <footer>
   Guía de uso pensada para dueños y encargados de negocio — sin conocimientos de sistemas ni de contabilidad.
 </footer>
+
+<script>
+  function datosDeContacto() {
+    var form = document.getElementById('contact-form');
+    if (!form.reportValidity()) return null;
+    return {
+      asunto: document.getElementById('contact-asunto').value.trim(),
+      motivo: document.getElementById('contact-motivo').value.trim()
+    };
+  }
+
+  function enviarPorEmail() {
+    var datos = datosDeContacto();
+    if (!datos) return;
+    var asunto = encodeURIComponent(datos.asunto);
+    var cuerpo = encodeURIComponent(datos.motivo);
+    window.location.href = 'mailto:mcfreeman92@yahoo.com?subject=' + asunto + '&body=' + cuerpo;
+  }
+
+  function enviarPorWhatsApp() {
+    var datos = datosDeContacto();
+    if (!datos) return;
+    var texto = 'Hola, te escribo desde el sitio de myTienda.\n\nAsunto: ' + datos.asunto + '\nMotivo: ' + datos.motivo;
+    window.open('https://wa.me/5359374991?text=' + encodeURIComponent(texto), '_blank', 'noopener');
+  }
+</script>
 
 </body>
 </html>
