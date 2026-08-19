@@ -1,1 +1,888 @@
-/tmp/claude-0/-home-user/cc87f64b-0cfc-585f-bcad-22fa4b99e12f/scratchpad/index-current.html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tu negocio, controlado de punta a punta</title>
+<style>
+  :root{
+    --paper: #eeeee3;
+    --paper-raised: #ffffff;
+    --ink: #20261f;
+    --ink-soft: #4a5147;
+    --ink-faint: #7a8172;
+    --line: rgba(32,38,31,0.14);
+    --gold: #b9791c;
+    --gold-ink: #7a4f10;
+    --teal: #24685f;
+    --teal-ink: #163f39;
+    --wine: #7a3348;
+    --wine-ink: #532233;
+    --shadow: 0 1px 2px rgba(32,38,31,0.06), 0 8px 24px rgba(32,38,31,0.06);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #171a14;
+      --paper-raised: #1f2419;
+      --ink: #eeeee2;
+      --ink-soft: #bcc2b0;
+      --ink-faint: #838a77;
+      --line: rgba(238,238,226,0.14);
+      --gold: #e0a640;
+      --gold-ink: #f3c777;
+      --teal: #4fa79a;
+      --teal-ink: #7fcabd;
+      --wine: #c9718c;
+      --wine-ink: #dd9bb0;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #171a14;
+    --paper-raised: #1f2419;
+    --ink: #eeeee2;
+    --ink-soft: #bcc2b0;
+    --ink-faint: #838a77;
+    --line: rgba(238,238,226,0.14);
+    --gold: #e0a640;
+    --gold-ink: #f3c777;
+    --teal: #4fa79a;
+    --teal-ink: #7fcabd;
+    --wine: #c9718c;
+    --wine-ink: #dd9bb0;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
+  }
+  :root[data-theme="light"] {
+    --paper: #eeeee3;
+    --paper-raised: #ffffff;
+    --ink: #20261f;
+    --ink-soft: #4a5147;
+    --ink-faint: #7a8172;
+    --line: rgba(32,38,31,0.14);
+    --gold: #b9791c;
+    --gold-ink: #7a4f10;
+    --teal: #24685f;
+    --teal-ink: #163f39;
+    --wine: #7a3348;
+    --wine-ink: #532233;
+    --shadow: 0 1px 2px rgba(32,38,31,0.06), 0 8px 24px rgba(32,38,31,0.06);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; animation: none !important; }
+  }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3 {
+    font-family: Charter, "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+    font-weight: 600;
+    text-wrap: balance;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+
+  .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-ink);
+  }
+
+  a { color: var(--teal-ink); }
+
+  .shell {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 1.5rem 6rem;
+  }
+
+  /* ---------- nav ---------- */
+  .topnav {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .topnav-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0.85rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+  }
+  .brand {
+    font-family: Charter, "Iowan Old Style", Georgia, serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    white-space: nowrap;
+  }
+  .brand span { color: var(--gold-ink); }
+  .navlinks {
+    display: flex;
+    gap: 1.1rem;
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+  }
+  .navlinks a { text-decoration: none; color: var(--ink-soft); }
+  .navlinks a:hover { color: var(--ink); }
+  .navlinks a:focus-visible, a:focus-visible, summary:focus-visible {
+    outline: 2px solid var(--teal);
+    outline-offset: 2px;
+    border-radius: 3px;
+  }
+
+  /* ---------- hero ---------- */
+  .hero {
+    padding: 3.6rem 0 2.6rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero h1 {
+    font-size: clamp(1.9rem, 4vw, 2.7rem);
+    margin: 0.6rem 0 1rem;
+    max-width: 18ch;
+  }
+  .hero p.lede {
+    max-width: 62ch;
+    font-size: 1.1rem;
+    color: var(--ink-soft);
+    margin: 0 0 1.6rem;
+  }
+  .hero-tags {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+  }
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    padding: 0.35rem 0.7rem;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    color: var(--ink-soft);
+    background: var(--paper-raised);
+  }
+
+  section { padding: 3.4rem 0; border-bottom: 1px solid var(--line); }
+  section:last-of-type { border-bottom: none; }
+  section h2 {
+    font-size: clamp(1.4rem, 2.6vw, 1.85rem);
+    margin: 0.3rem 0 0.5rem;
+  }
+  section > .eyebrow { display:block; margin-bottom: 0.4rem; }
+  section > p.intro {
+    max-width: 68ch;
+    color: var(--ink-soft);
+    margin: 0 0 2rem;
+  }
+
+  /* ---------- role cards ---------- */
+  .roles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.1rem;
+  }
+  .role-card {
+    background: var(--paper-raised);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+  }
+  .role-card .mono {
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: Charter, Georgia, serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #fff;
+    margin-bottom: 0.9rem;
+  }
+  .role-card.vendedor .mono { background: var(--gold); }
+  .role-card.almacenero .mono { background: var(--teal); }
+  .role-card.admin .mono { background: var(--wine); }
+  .role-card h3 { font-size: 1.15rem; margin: 0 0 0.3rem; }
+  .role-card .role-sub { font-size: 0.85rem; color: var(--ink-faint); margin-bottom: 0.9rem; }
+  .role-card ul { margin: 0; padding-left: 1.1rem; color: var(--ink-soft); font-size: 0.94rem; }
+  .role-card li { margin-bottom: 0.4rem; }
+
+  /* ---------- plan cards (licencias) ---------- */
+  .plan-card { position: relative; }
+  .plan-card.pequeno .mono { background: var(--teal); }
+  .plan-card.mediano .mono { background: var(--gold); }
+  .plan-card.grande .mono { background: var(--wine); }
+  .plan-card.featured {
+    border-color: var(--gold);
+    box-shadow: 0 2px 4px rgba(32,38,31,0.08), 0 14px 32px rgba(185,121,28,0.22);
+  }
+  @media (min-width: 720px) {
+    .plan-card.featured { transform: translateY(-0.4rem); }
+  }
+  .plan-badge {
+    position: absolute;
+    top: -0.75rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gold);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.9rem;
+    border-radius: 999px;
+    box-shadow: var(--shadow);
+    white-space: nowrap;
+  }
+  .plan-price {
+    margin: 0.9rem 0 1.1rem;
+    padding-bottom: 0.9rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .plan-price-amount {
+    font-family: Charter, Georgia, serif;
+    font-weight: 700;
+    font-size: 1.7rem;
+    color: var(--ink);
+  }
+  .plan-price-period {
+    font-size: 0.85rem;
+    color: var(--ink-faint);
+    margin-left: 0.15rem;
+  }
+  .plan-price-annual {
+    display: block;
+    margin-top: 0.3rem;
+    font-size: 0.82rem;
+    color: var(--gold-ink);
+    font-weight: 600;
+  }
+
+  /* ---------- benefits ---------- */
+  .benefits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.4rem 1.6rem;
+  }
+  .benefit { display: flex; gap: 0.9rem; }
+  .benefit .icon {
+    flex: none;
+    width: 34px; height: 34px;
+    color: var(--teal-ink);
+  }
+  .benefit .icon svg { width: 100%; height: 100%; }
+  .benefit h4 { margin: 0 0 0.25rem; font-size: 1rem; font-family: inherit; font-weight: 700; }
+  .benefit p { margin: 0; color: var(--ink-soft); font-size: 0.92rem; }
+
+  /* ---------- flow ---------- */
+  .flow {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0;
+    counter-reset: flow;
+  }
+  .flow-step {
+    position: relative;
+    background: var(--paper-raised);
+    border: 1px solid var(--line);
+    padding: 1.3rem 1.2rem;
+    font-size: 0.92rem;
+  }
+  .flow-step:first-child { border-radius: 12px 12px 0 0; }
+  .flow-step:last-child { border-radius: 0 0 12px 12px; }
+  @media (min-width: 720px) {
+    .flow { grid-auto-flow: column; }
+    .flow-step:first-child { border-radius: 12px 0 0 12px; }
+    .flow-step:last-child { border-radius: 0 12px 12px 0; }
+    .flow-step:not(:last-child) { border-right: none; }
+  }
+  .flow-step:not(:first-child) { border-top: none; }
+  @media (min-width: 720px) {
+    .flow-step:not(:first-child) { border-top: 1px solid var(--line); border-left: none; }
+  }
+  .flow-step .who {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+    display: block;
+  }
+  .flow-step.v .who { color: var(--gold-ink); }
+  .flow-step.a .who { color: var(--teal-ink); }
+  .flow-step.ad .who { color: var(--wine-ink); }
+  .flow-step p { margin: 0; color: var(--ink-soft); }
+
+  /* ---------- offline callout ---------- */
+  .callout {
+    background: var(--paper-raised);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--teal);
+    border-radius: 10px;
+    padding: 1.6rem 1.8rem;
+    box-shadow: var(--shadow);
+  }
+  .callout h3 { margin-top: 0; font-size: 1.15rem; }
+  .callout p { color: var(--ink-soft); margin-bottom: 0; max-width: 68ch; }
+  .callout p + p { margin-top: 0.8rem; }
+
+  /* ---------- steps ---------- */
+  .steps { list-style: none; margin: 0; padding: 0; counter-reset: step; }
+  .steps li {
+    counter-increment: step;
+    display: grid;
+    grid-template-columns: 2.4rem 1fr;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-top: 1px solid var(--line);
+  }
+  .steps li:first-child { border-top: none; }
+  .steps li::before {
+    content: counter(step);
+    font-family: Charter, Georgia, serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--gold-ink);
+    width: 2.4rem; height: 2.4rem;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .steps h4 { margin: 0.15rem 0 0.25rem; font-size: 1rem; }
+  .steps p { margin: 0; color: var(--ink-soft); font-size: 0.93rem; }
+
+  /* ---------- faq ---------- */
+  .faq { display: flex; flex-direction: column; gap: 0.7rem; }
+  details {
+    background: var(--paper-raised);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 0.2rem 1.2rem;
+  }
+  summary {
+    cursor: pointer;
+    padding: 1rem 0;
+    font-weight: 700;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after {
+    content: "+";
+    font-family: Charter, Georgia, serif;
+    font-size: 1.3rem;
+    color: var(--gold-ink);
+    flex: none;
+  }
+  details[open] summary::after { content: "\2212"; }
+  details p { margin: 0 0 1rem; color: var(--ink-soft); max-width: 66ch; font-size: 0.94rem; }
+
+  footer {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 3rem;
+    color: var(--ink-faint);
+    font-size: 0.85rem;
+  }
+
+  code, .kbd {
+    font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+    background: color-mix(in srgb, var(--ink) 8%, transparent);
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.9em;
+  }
+
+  /* ---------- download ---------- */
+  .btn-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.85rem 1.7rem;
+    border-radius: 10px;
+    background: var(--teal);
+    color: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    box-shadow: var(--shadow);
+  }
+  .btn-download:hover { background: var(--teal-ink); }
+  .download-callout { border-left-color: var(--gold); }
+  .download-callout p + p { margin-top: 0.6rem; }
+
+  /* ---------- contacto ---------- */
+  .contact-box {
+    max-width: 620px;
+  }
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+  }
+  .contact-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .contact-field label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--ink-soft);
+  }
+  .contact-field input,
+  .contact-field textarea {
+    font: inherit;
+    font-size: 0.95rem;
+    padding: 0.7rem 0.9rem;
+    border-radius: 8px;
+    border: 1px solid var(--line);
+    background: var(--paper);
+    color: var(--ink);
+    resize: vertical;
+  }
+  .contact-field input:focus,
+  .contact-field textarea:focus {
+    outline: 2px solid var(--teal);
+    outline-offset: 1px;
+  }
+  .contact-actions {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    margin-top: 0.2rem;
+  }
+  .btn-contact {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+  }
+  .btn-contact.email {
+    background: var(--teal);
+    color: #fff;
+    box-shadow: var(--shadow);
+  }
+  .btn-contact.email:hover { background: var(--teal-ink); }
+  .btn-contact.whatsapp {
+    background: transparent;
+    border: 1.5px solid var(--line);
+    color: var(--ink);
+  }
+  .btn-contact.whatsapp:hover {
+    border-color: var(--teal);
+    color: var(--teal-ink);
+  }
+  .contact-hint {
+    font-size: 0.8rem;
+    color: var(--ink-faint);
+    margin-top: 0.7rem;
+  }
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="topnav-inner">
+    <div class="brand">Tu Negocio <span>Bajo Control</span></div>
+    <div class="navlinks">
+      <a href="#descarga">Descargar</a>
+      <a href="#roles">Quién hace qué</a>
+      <a href="#beneficios">Qué ganas</a>
+      <a href="#dia">Un día típico</a>
+      <a href="#offline">Sin internet</a>
+      <a href="#empezar">Cómo empezar</a>
+      <a href="#licencias">Licencias</a>
+      <a href="#faq">Preguntas</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </div>
+</nav>
+
+<div class="shell">
+
+  <section class="hero" style="border-bottom:none;">
+    <span class="eyebrow">Guía para dueños de negocio</span>
+    <h1>Sabes en todo momento cuánto tienes, cuánto vendiste y cuánto te deben.</h1>
+    <p class="lede">Esta guía explica, sin tecnicismos, qué hace la app y cómo usarla para llevar el control real de tu negocio: stock, ventas, fiados y quién hizo cada cosa — funcione o no el internet.</p>
+    <div class="hero-tags">
+      <span class="tag">Sin necesitar Excel</span>
+      <span class="tag">Funciona sin conexión</span>
+      <span class="tag">Un rol para cada persona</span>
+      <span class="tag">Queda todo anotado</span>
+    </div>
+  </section>
+
+  <section id="descarga">
+    <span class="eyebrow">Para empezar</span>
+    <h2>Descarga la app</h2>
+    <p class="intro">Instalador oficial para Android. Se descarga directo al celular, sin pasar por ninguna tienda de aplicaciones.</p>
+    <div class="callout download-callout">
+      <h3>Última versión disponible</h3>
+      <p>Toca el botón desde el celular donde vas a usar la app. Si es la primera vez que instalas algo así, puede pedirte un permiso ("permitir instalar aplicaciones de este origen") — es normal, se acepta una sola vez y no hace falta repetirlo en las próximas actualizaciones.</p>
+      <p style="margin-top:1.3rem;">
+        <a class="btn-download" href="https://github.com/mcfreeman92/tienda-app-releases/releases/latest/download/app-release.apk">
+          ⬇ Descargar la última versión
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <section id="que-es">
+    <span class="eyebrow">En pocas palabras</span>
+    <h2>¿Qué es esta app, en pocas palabras?</h2>
+    <p class="intro">Es un sistema de gestión para tu negocio que reemplaza al cuaderno, la calculadora y los mensajes de "¿cuánto quedó?" por algo que cualquiera de tus empleados puede usar desde su celular. Cada persona entra con su usuario y ve solamente lo que le corresponde a su tarea — nadie ve más de la cuenta, y tú, como dueño, ves todo.</p>
+    <p class="intro" style="margin-top:-1.3rem;">No hace falta ser bueno con la computación ni con los números: la app hace las cuentas, guarda todo por ti y te avisa cuando algo necesita tu atención.</p>
+  </section>
+
+  <section id="roles">
+    <span class="eyebrow">Tres personas, tres tareas</span>
+    <h2>Quién hace qué dentro de la app</h2>
+    <p class="intro">Cada empleado se registra eligiendo un rol. La app le muestra solamente las pantallas que necesita para su trabajo.</p>
+    <div class="roles">
+      <div class="role-card vendedor">
+        <div class="mono">V</div>
+        <h3>Vendedor</h3>
+        <div class="role-sub">La persona que atiende y cobra</div>
+        <ul>
+          <li>Vende escaneando el código de barras del producto</li>
+          <li>Cobra en efectivo, transferencia (con foto del comprobante), o fiado en cuotas</li>
+          <li>La app calcula el cambio sola, incluso si el cliente paga con una moneda distinta</li>
+          <li>Ve el total vendido del día y sus productos más vendidos</li>
+        </ul>
+      </div>
+      <div class="role-card almacenero">
+        <div class="mono">A</div>
+        <h3>Almacenero</h3>
+        <div class="role-sub">La persona que controla la mercadería</div>
+        <ul>
+          <li>Registra cada compra que entra (con precio de costo y proveedor)</li>
+          <li>Registra cada salida: merma, uso interno, o traslado al mostrador para vender</li>
+          <li>Da de alta productos nuevos con foto, código de barras y categoría</li>
+          <li>Ve cuánto stock queda de cada producto, en almacén y en mostrador</li>
+        </ul>
+      </div>
+      <div class="role-card admin">
+        <div class="mono">AD</div>
+        <h3>Administrador (tú)</h3>
+        <div class="role-sub">El dueño o encargado general</div>
+        <ul>
+          <li>Ve las ventas y el movimiento de almacén de todo el negocio, en vivo</li>
+          <li>Aprueba a los nuevos empleados que se quieran sumar</li>
+          <li>Recibe alertas: ventas, stock bajo, mercadería movida, pedidos de acceso — y elige cuáles quiere recibir</li>
+          <li>Puede revisar quién hizo cada cambio, aunque no esté presente</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="beneficios">
+    <span class="eyebrow">El motivo por el que te sirve</span>
+    <h2>Qué gana tu negocio con esto</h2>
+    <p class="intro">No es tecnología por la tecnología: cada función de la app resuelve un problema concreto de negocio.</p>
+    <div class="benefits">
+      <div class="benefit">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="8" width="18" height="12" rx="1.5"/><path d="M3 8l3-4h12l3 4"/><path d="M9 12h6"/></svg></div>
+        <div>
+          <h4>Stock real, sin contar a mano</h4>
+          <p>Sabes cuánto tienes en el almacén y cuánto en el mostrador en todo momento, sin hacer inventario a ojo.</p>
+        </div>
+      </div>
+      <div class="benefit">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="6" width="20" height="13" rx="2"/><circle cx="12" cy="12.5" r="2.6"/><path d="M6 6V4h12v2"/></svg></div>
+        <div>
+          <h4>Control de caja del día</h4>
+          <p>Ves cuánto entró en efectivo, cuánto por transferencia y cuánto quedó fiado, sin sumar recibos a mano.</p>
+        </div>
+      </div>
+      <div class="benefit">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4v16h16"/><path d="M8 15l3-4 3 3 4-6"/></svg></div>
+        <div>
+          <h4>Fiado sin olvidos</h4>
+          <p>La app arma las cuotas de cada venta a crédito y te avisa cuáles vencieron y quién todavía no pagó.</p>
+        </div>
+      </div>
+      <div class="benefit">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="12" r="6.5"/><circle cx="15.5" cy="12" r="6.5"/></svg></div>
+        <div>
+          <h4>Varias monedas a la vez</h4>
+          <p>Trabajas en pesos y dólares (u otras) con conversión automática al momento de cobrar.</p>
+        </div>
+      </div>
+      <div class="benefit">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg></div>
+        <div>
+          <h4>Nadie puede decir "yo no fui"</h4>
+          <p>Cada alta, baja o eliminación queda anotada con el nombre de quién la hizo y cuándo.</p>
+        </div>
+      </div>
+      <div class="benefit">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M18 8a6 6 0 10-12 0c0 7-3 8-3 8h18s-3-1-3-8"/><path d="M13.7 21a2 2 0 01-3.4 0"/></svg></div>
+        <div>
+          <h4>Te avisa antes de que sea un problema</h4>
+          <p>Notificaciones de ventas, movimientos de almacén, stock bajo y pedidos de acceso de nuevos empleados. Cuando sale una versión nueva de la app, también te avisa a ti y a tu equipo con un aviso arriba de la pantalla — tocarlo empieza la descarga al instante.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="dia">
+    <span class="eyebrow">De la mercadería al bolsillo</span>
+    <h2>Un día típico, paso a paso</h2>
+    <p class="intro">Así se conecta el trabajo de las tres personas en una operación normal del día a día.</p>
+    <div class="flow">
+      <div class="flow-step a">
+        <span class="who">Almacenero</span>
+        <p>Recibe una compra y la carga como <strong>entrada</strong>: el stock del almacén sube al instante.</p>
+      </div>
+      <div class="flow-step a">
+        <span class="who">Almacenero</span>
+        <p>Pasa parte de esa mercadería al mostrador (<strong>salida</strong> con motivo "mostrador") para que se pueda vender.</p>
+      </div>
+      <div class="flow-step v">
+        <span class="who">Vendedor</span>
+        <p>Escanea el producto en el punto de venta y cobra: efectivo, transferencia o fiado.</p>
+      </div>
+      <div class="flow-step ad">
+        <span class="who">Administrador</span>
+        <p>Ve la venta reflejada al instante en su panel, y recibe una alerta si el stock quedó bajo.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="offline">
+    <span class="eyebrow">La pregunta que todos hacen</span>
+    <h2>¿Y si no tengo internet?</h2>
+    <div class="callout">
+      <h3>La app sigue funcionando igual.</h3>
+      <p>Cada venta y cada movimiento de mercadería se guarda al instante en el celular donde se hizo, tenga o no tenga señal en ese momento. No hace falta estar conectado para seguir atendiendo clientes o cargando mercadería.</p>
+      <p>Apenas el celular vuelve a tener internet — aunque sea un momento — toda esa información se envía sola y se actualiza en los dispositivos de los demás. Si tienes varios encargados o más de un local, cada uno puede seguir trabajando de forma independiente sin perder nada, y todo se termina ordenando solo cuando vuelve la conexión.</p>
+    </div>
+  </section>
+
+  <section id="empezar">
+    <span class="eyebrow">Puesta en marcha</span>
+    <h2>Cómo empezar a usarla</h2>
+    <ol class="steps">
+      <li>
+        <div>
+          <h4>Alguien se registra como Administrador</h4>
+          <p>Esa persona crea la empresa desde la pantalla de Registro, eligiendo el rol "Crear empresa". Suele ser el dueño o quien va a supervisar todo. Si más adelante sumas otro local o un negocio distinto, se repite este mismo paso: cada empresa queda separada, con su propio stock, su propia caja y su propio equipo, sin que se mezcle una cosa con la otra.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h4>Se suma al equipo</h4>
+          <p>Cada empleado se registra desde su propio celular, elige su rol (vendedor o almacenero) y se vincula a la empresa ya creada.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h4>El administrador aprueba</h4>
+          <p>Ningún empleado nuevo puede trabajar hasta que el admin lo aprueba desde Ajustes → Usuarios. Así controlas quién entra.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h4>Se configura lo básico del negocio</h4>
+          <p>Categorías de productos, unidades de medida (kilo, unidad, litro) y las monedas que se usan para cobrar.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h4>Se cargan los productos y el stock inicial</h4>
+          <p>El almacenero da de alta cada producto y registra la primera entrada de mercadería.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h4>Se pasa stock al mostrador y arranca la venta</h4>
+          <p>Con productos ya disponibles en el mostrador, el vendedor puede empezar a cobrar desde el punto de venta.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section id="licencias">
+    <span class="eyebrow">Planes y licencias</span>
+    <h2>Elige el plan según el tamaño de tu equipo</h2>
+    <p class="intro">Las tres licencias incluyen exactamente las mismas funciones de la app. Lo único que cambia es cuántas cuentas activas puede tener cada rol y cuántos locales puedes operar.</p>
+    <div class="callout download-callout" style="margin-bottom:1.6rem;">
+      <h3>2 meses sin costo para probar</h3>
+      <p>Toda empresa nueva tiene 2 meses de uso sin costo para explorar la app a fondo con tu equipo, antes de elegir cualquiera de estos planes.</p>
+    </div>
+    <div class="roles">
+      <div class="role-card plan-card pequeno">
+        <div class="mono">K</div>
+        <h3>Kiosco</h3>
+        <div class="role-sub">Ideal para arrancar</div>
+        <div class="plan-price">
+          <span class="plan-price-amount">$5</span><span class="plan-price-period">/mes</span>
+          <span class="plan-price-annual">o $50/año — ahorra 2 meses</span>
+        </div>
+        <ul>
+          <li>1 Administrador</li>
+          <li>1 Almacenero</li>
+          <li>1 Vendedor</li>
+          <li>1 local</li>
+          <li>Soporte 24/7</li>
+        </ul>
+      </div>
+      <div class="role-card plan-card mediano featured">
+        <span class="plan-badge">Más popular</span>
+        <div class="mono">T</div>
+        <h3>Tienda</h3>
+        <div class="role-sub">Para equipos en crecimiento</div>
+        <div class="plan-price">
+          <span class="plan-price-amount">$15</span><span class="plan-price-period">/mes</span>
+          <span class="plan-price-annual">o $150/año — ahorra 2 meses</span>
+        </div>
+        <ul>
+          <li>3 Administradores</li>
+          <li>5 Almaceneros</li>
+          <li>5 Vendedores</li>
+          <li>6 locales</li>
+          <li>Soporte 24/7</li>
+        </ul>
+      </div>
+      <div class="role-card plan-card grande">
+        <div class="mono">C</div>
+        <h3>Cadena</h3>
+        <div class="role-sub">Para negocios con varios locales</div>
+        <div class="plan-price">
+          <span class="plan-price-amount">$30</span><span class="plan-price-period">/mes</span>
+          <span class="plan-price-annual">o $300/año — ahorra 2 meses</span>
+        </div>
+        <ul>
+          <li>Administradores ilimitados</li>
+          <li>Almaceneros ilimitados</li>
+          <li>Vendedores ilimitados</li>
+          <li>15 locales</li>
+          <li>Soporte 24/7</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <span class="eyebrow">Dudas frecuentes</span>
+    <h2>Preguntas que seguro te estás haciendo</h2>
+    <div class="faq">
+      <details>
+        <summary>¿Qué es un "vale" exactamente?</summary>
+        <p>Es el comprobante de un movimiento de mercadería. Puede ser una <strong>entrada</strong> (algo que compraste y sumas al almacén) o una <strong>salida</strong> (algo que sacas del almacén, ya sea porque se rompió, lo usaste tú, o lo pasaste al mostrador para vender). Cada vale queda numerado y con la fecha y la persona que lo hizo.</p>
+      </details>
+      <details>
+        <summary>¿Puedo vender fiado?</summary>
+        <p>Sí. En el punto de venta puedes elegir "a plazo" y definir en cuántas cuotas y de qué monto se paga. La app te muestra después qué cuotas están vencidas y cuáles ya se cobraron, para que no se te escape ningún cliente.</p>
+      </details>
+      <details>
+        <summary>¿Cómo me doy cuenta si un empleado hizo algo que no debía?</summary>
+        <p>Toda alta, edición o eliminación queda registrada en la auditoría con el nombre de la persona y el momento exacto. Puedes revisarlo cuando quieras desde el panel de administrador.</p>
+      </details>
+      <details>
+        <summary>¿Puedo tener más de un local o varios celulares trabajando al mismo tiempo?</summary>
+        <p>Sí. Cada dispositivo trabaja de forma independiente, incluso sin internet, y se sincroniza con los demás apenas hay conexión. Como administrador, puedes vincular un dispositivo nuevo compartiendo un código QR o un archivo de acceso.</p>
+      </details>
+      <details>
+        <summary>Tengo (o estoy por abrir) más de un negocio. ¿Puedo usar la misma app para los dos, sin que se mezclen?</summary>
+        <p>Sí, y es más simple de lo que parece: cada negocio es su propia "empresa" dentro de la app, con su propio equipo, su propio stock y su propia caja, completamente aislados uno del otro. Para el segundo negocio simplemente se repite el registro inicial creando una empresa nueva. Sirve tanto si abres una sucursal, como si el negocio nuevo es de otro rubro — cada uno lleva sus cuentas por separado, pero sigues usando la misma app de siempre.</p>
+      </details>
+      <details>
+        <summary>¿Necesito saber de contabilidad o de sistemas para usarla?</summary>
+        <p>No. Las cuentas (cambio, conversión de moneda, reparto de cuotas, costos promedio) las hace la app. Tú solo cargas lo que compraste, lo que vendiste y a quién le fiaste.</p>
+      </details>
+      <details>
+        <summary>¿Qué pasa si se me está por acabar un producto?</summary>
+        <p>Puedes definir desde qué cantidad se considera "stock bajo" y la app te manda una notificación apenas un producto llega a ese límite, para que lo repongas a tiempo.</p>
+      </details>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <span class="eyebrow">Hablemos</span>
+    <h2>¿Tienes dudas? Escríbenos</h2>
+    <p class="intro">Completa el asunto y el motivo de tu consulta, y elige si prefieres enviarlo por email o por WhatsApp.</p>
+    <div class="callout contact-box">
+      <form class="contact-form" id="contact-form">
+        <div class="contact-field">
+          <label for="contact-asunto">Asunto</label>
+          <input type="text" id="contact-asunto" name="asunto" required placeholder="Ej: Quiero cotizar el plan Tienda">
+        </div>
+        <div class="contact-field">
+          <label for="contact-motivo">Motivo</label>
+          <textarea id="contact-motivo" name="motivo" rows="4" required placeholder="Cuéntanos qué necesitas..."></textarea>
+        </div>
+        <div class="contact-actions">
+          <button type="button" class="btn-contact email" onclick="enviarPorEmail()">Enviar por email</button>
+          <button type="button" class="btn-contact whatsapp" onclick="enviarPorWhatsApp()">Enviar por WhatsApp</button>
+        </div>
+      </form>
+      <p class="contact-hint">Al tocar un botón se abre tu app de correo o de WhatsApp con el mensaje ya escrito, listo para enviar.</p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  Guía de uso pensada para dueños y encargados de negocio — sin conocimientos de sistemas ni de contabilidad.
+</footer>
+
+<script>
+  function datosDeContacto() {
+    var form = document.getElementById('contact-form');
+    if (!form.reportValidity()) return null;
+    return {
+      asunto: document.getElementById('contact-asunto').value.trim(),
+      motivo: document.getElementById('contact-motivo').value.trim()
+    };
+  }
+
+  function enviarPorEmail() {
+    var datos = datosDeContacto();
+    if (!datos) return;
+    var asunto = encodeURIComponent(datos.asunto);
+    var cuerpo = encodeURIComponent(datos.motivo);
+    window.location.href = 'mailto:mcfreeman92@yahoo.com?subject=' + asunto + '&body=' + cuerpo;
+  }
+
+  function enviarPorWhatsApp() {
+    var datos = datosDeContacto();
+    if (!datos) return;
+    var texto = 'Hola, te escribo desde el sitio de myTienda.\n\nAsunto: ' + datos.asunto + '\nMotivo: ' + datos.motivo;
+    window.open('https://wa.me/5359374991?text=' + encodeURIComponent(texto), '_blank', 'noopener');
+  }
+</script>
+
+</body>
+</html>
